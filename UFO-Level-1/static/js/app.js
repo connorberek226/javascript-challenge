@@ -1,9 +1,16 @@
 // from data.js
-var tableData = data;
+const ufoSightings = data;
+// console.log(ufoSightings);
+function addToTable(sighting) {
 
-function listloop(tableData) {
-    for (var i = 0; i < tableData.length; i++) {
-        console.log(tableData[i]);
-    }
+    let tableBody = d3.select("tbody");
+
+    let tr = tableBody.append("tr");
+
+    Object.entries(sighting).forEach(([key, val]) => {
+        const cell = tr.append("td").text(val);
+
+    });
 }
-// YOUR CODE HERE!
+
+ufoSightings.forEach(addToTable);
