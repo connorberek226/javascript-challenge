@@ -14,3 +14,26 @@ function addToTable(sighting) {
 }
 
 ufoSightings.forEach(addToTable);
+
+const enter = d3.select("#filter-btn");
+
+enter.on("click", function {
+
+    d3.event.preventDefault();
+
+    const date = d3.select("#datetime");
+
+    const dateValue = date.property("value");
+
+
+
+    const filteredDates = ufoSightings.filter(date => date.datetime === dateValue);
+
+    
+
+    d3.select("tbody").html("");
+
+
+    filteredDates.forEach(addToTable);
+
+});
