@@ -17,7 +17,7 @@ ufoSightings.forEach(addToTable);
 
 const enter = d3.select("#filter-btn");
 
-enter.on("click", function {
+enter.on("click", function() {
 
     d3.event.preventDefault();
 
